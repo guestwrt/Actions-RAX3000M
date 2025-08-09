@@ -166,12 +166,14 @@ cp -rf ../kiddin9/luci-app-quickstart/* luci-app-quickstart
 mkdir quectel_QMI_WWAN
 mkdir fibocom_QMI_WWAN
 mkdir meig_QMI_WWAN
+mkdir tw_QMI_WWAN
 mkdir quectel_cm_5G
 # mkdir quectel_MHI
 # mkdir luci-app-hypermodem
 cp -rf ../Modem-Support/quectel_QMI_WWAN/* quectel_QMI_WWAN
 cp -rf ../Modem-Support/fibocom_QMI_WWAN/* fibocom_QMI_WWAN
 cp -rf ../Modem-Support/meig_QMI_WWAN/* meig_QMI_WWAN
+cp -rf ../../Modem-Support/tw_QMI_WWAN/* tw_QMI_WWAN
 cp -rf ../Modem-Support/quectel_cm_5G/* quectel_cm_5G
 # cp -rf ../Modem-Support/quectel_MHI/* quectel_MHI
 # cp -rf ../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
@@ -183,6 +185,10 @@ cp -rf ../Modem-Support/sms-tool/* sms-tool
 cp -rf ../Modem-Support/luci-app-sms-tool/* luci-app-sms-tool
 cp -rf ../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* luci-app-sms-tool
 
+# 5G模组IPv6
+mkdir ndisc
+cp -rf ../../Modem-Support/ndisc/* ndisc
+
 # 5G模组管理插件+AT工具
 mkdir luci-app-modem
 cp -rf ../Modem-Support/luci-app-modem/* luci-app-modem
@@ -190,7 +196,7 @@ sed -i "/kmod-pcie_mhi/d" luci-app-modem/Makefile
 popd
 
 # 设置GCC版本
-cp -rf MyConfig/configs/hanwckf/toolchain/* toolchain
+# cp -rf MyConfig/configs/hanwckf/toolchain/* toolchain
 
 #解决elfutils编译错误
 # rm -rf package/libs/elfutils
